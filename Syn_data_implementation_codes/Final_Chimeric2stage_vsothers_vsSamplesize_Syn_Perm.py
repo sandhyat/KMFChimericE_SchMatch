@@ -52,6 +52,7 @@ from sklearn.neural_network import MLPClassifier
 from matching.games import StableMarriage
 import pingouin as pg
 import datetime
+import sys
 
 
 def Stable_matching_algorithm(C_X1_train, C_X2_train, index_O_to_R, index_R_to_O,num_mapped_axis):
@@ -2288,12 +2289,12 @@ list_of_number_samples = [500,1000,2000,5000,10000]
 
 # data details
 outcome = "Y"
-dataset_number = 2 # 10 is for complex data
+dataset_number = sys.argv[1] 
 frac_renamed = 0.5
 ordering_type = 15  # number denotes the number of variables swapped, 41 denotes symmetrically swapped and 42 denotes asymmetric swapping, 15 is randomly shuffling all of them
 num_of_dataset_samples = 5
 mpfeatures = 4  # number of mapped features
-datatype = 'c'  # b denotes when the data needs to be binarized
+datatype = sys.argv[2]  # b denotes when the data needs to be binarized
 
 # model details
 batchnorm = 0  # 1 denotes present and 0 denotes absent
