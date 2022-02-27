@@ -16,3 +16,8 @@ Following are the file names and how to use them:
 9) Syn_data_implementation_codes/Final_Chimeric2stage_vsothers_vs_Mappedfeatures_Syn_Perm_Binarized.py : Same as (5) when the continuous features have been binarized (use 'b' as the second argument) by thresholding the data at 0. Input and output remains the same. 
 
 Package dependencies : torch, numpy, sklearn, pandas, matplotlib, matching, pingouin
+
+
+ACTFAST_data_implementation_codes directory containes the python scripts used to run the similar experiments as in the case of syn data.
+
+MIMI_data_implementation_codes contains 1) text file that has the sql commands used to extract the data from psql database, 2) jupyter notebook to format the extracted data based on certain constraints, 3) python script to perform exhaustive hyperparameter tuning, 4) python script to perform the roundrobin hyperparameter tuning using only mapped features, and 5) python script to that compares the performance of Chimeric encoder, KMF and Kang method on the partial mapping case of MIMIC dataset.
