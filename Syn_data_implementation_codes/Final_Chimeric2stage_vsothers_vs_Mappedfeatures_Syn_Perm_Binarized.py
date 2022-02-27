@@ -1,5 +1,5 @@
 """
-This code provides a pipeline to feature mapping problem. It compares the KMF (Sim correlation),  two stage procedure (KMF + Sim correlation), Kang and RadialGAN.
+This code provides a pipeline to feature mapping problem. It compares the KMF (Sim correlation),  two stage procedure (KMF + Sim correlation), Kang and RadialGAN binarized case.
 
 The components for both the methods consist of :
 1) Training KMF -> Chimeric AE  and  Simple Correlation on exactly same data
@@ -52,7 +52,7 @@ from sklearn.neural_network import MLPClassifier
 from matching.games import StableMarriage
 import pingouin as pg
 import datetime
-
+import sys
 
 def Stable_matching_algorithm(C_X1_train, C_X2_train, index_O_to_R, index_R_to_O, num_mapped_axis):
     # creating the preference dictionaries
@@ -2386,11 +2386,11 @@ num_feat_sq_trans = 0
 
 # data details
 outcome = "Y"
-dataset_number = 1  # 10 is for complex data
+dataset_number = sys.argv[1]  # 10 is for complex data
 frac_renamed = 0.5
 ordering_type = 15  # number denotes the number of variables swapped, 41 denotes symmetrically swapped and 42 denotes asymmetric swapping, 15 is randomly shuffling all of them
 num_of_dataset_samples = 5
-datatype = 'b'  # b denotes when the data needs to be binarized
+datatype = sys.argv[2]  # b denotes when the data needs to be binarized
 
 # model details
 batchnorm = 0  # 1 denotes present and 0 denotes absent
