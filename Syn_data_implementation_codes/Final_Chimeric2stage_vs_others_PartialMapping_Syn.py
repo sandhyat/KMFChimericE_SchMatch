@@ -1817,13 +1817,13 @@ num_feat_sq_trans = 0
 
 # data details
 outcome = "Y"
-dataset_number =  sys.arg[1]  #  5 for complex data dependencies
+dataset_number =  sys.argv[1]  #  5 for complex data dependencies
 frac_renamed = 0.5
 ordering_type = 15  # number denotes the number of variables swapped, 41 denotes symmetrically swapped and 42 denotes asymmetric swapping, 15 is randomly shuffling all of them
 num_of_dataset_samples = 5
 mpfeatures = 2  # number of mapped features
 num_xtra_feat_inX1 = 0  # 0 in onto case, 5 in partial mapping case
-datatype = sys.arg[2]  # b for the case whent he data is binarized
+datatype = sys.argv[2]  # b for the case whent he data is binarized
 
 
 alpha = 1.2  # used in KANG method
