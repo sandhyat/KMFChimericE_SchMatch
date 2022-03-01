@@ -4,7 +4,7 @@ this file provides a pipeline of feature mapping problem. The components are:
 The model being used has no batch normalization and has simple orthogonalization ( in individual AEs).
 2) Using hospital resident matching algorithm (with capacity 1) on the correlation matrix from 1 and get the final mappings.
 
-The two methods that are being compared are two stage Chimeric AE approach and Simple correlation approach.
+Methods being compared are two stage Chimeric AE approach, Simple correlation approach and Kang.
 
 
 INPUT:
@@ -20,7 +20,7 @@ This code has randomness over mapped features and unmapped features too
 In this code, at the step where mapped features are being sampled, we also decide the features that need to be dropped from the one of the datasets (dataset 2) so the number of features in two datasets are different.
 This is with the motivation that a lot of features are redundant if the underlying factors are very small.
 
-This code has multiple (10) sampled datasets from the same distribution
+This code has multiple sampled datasets from the same distribution
 
 """
 
@@ -54,6 +54,7 @@ from sklearn.neural_network import MLPClassifier
 from matching.games import HospitalResident, StableMarriage
 import statsmodels
 import pingouin as pg
+import sys
 
 def Matching_via_HRM(C_X1_train, C_X2_train, P_x1_O_to_R, num_mapped_axis):  # in this case here the small feature sized database is X1, so we need to treat it as hospital and there will be capacities on it.
     # creating the preference dictionaries
@@ -1811,18 +1812,18 @@ n_p = 3  # number of permutations
 n_t = 4  # number of data partitioning trials
 # list_of_total_Features_in_large_database = [7, 8, 9, 11] # fo complex data
 list_of_total_Features_in_large_database = [12,14, 16,18, 20] # for dataset 2
-# list_of_total_Features_in_large_database = [15,20,25,30,35,40,45,50]  # dataset 3
+# list_of_total_Features_in_large_database = [15,20,25,30,35,40,45,50]  # dataset 5
 num_feat_sq_trans = 0
 
 # data details
 outcome = "Y"
-dataset_number =  2  #  5 for complex data dependencies
+dataset_number =  sys.argv[1]  #  5 for complex data dependencies
 frac_renamed = 0.5
 ordering_type = 15  # number denotes the number of variables swapped, 41 denotes symmetrically swapped and 42 denotes asymmetric swapping, 15 is randomly shuffling all of them
 num_of_dataset_samples = 5
 mpfeatures = 2  # number of mapped features
-num_xtra_feat_inX1 = 0  # 0 in onto case, 5 in ppartial mapping case
-datatype = 'c'  # b for the case whent he data is binarized
+num_xtra_feat_inX1 = 0  # 0 in onto case, 5 in partial mapping case
+datatype = sys.argv[2]  # b for the case whent he data is binarized
 
 
 alpha = 1.2  # used in KANG method

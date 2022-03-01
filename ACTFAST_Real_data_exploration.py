@@ -63,8 +63,8 @@ np.random.seed(100)  # fixing the seed for reproducibility
 outcome = 'Mortality_30d'
 
 # reading data
-filename_x = '/home/trips/Feature_confusion/data/preopsFull15012021.csv'
-filename_y = '/home/trips/Feature_confusion/data/outcomes15012021.csv'
+filename_x = '/data/preopsFull15012021.csv'
+filename_y = '/data/outcomes15012021.csv'
 x = pd.read_csv(filename_x)
 outcomes_Full = pd.read_csv(filename_y)
 

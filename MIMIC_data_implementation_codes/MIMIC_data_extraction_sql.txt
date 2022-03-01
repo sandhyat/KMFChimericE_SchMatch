@@ -1,0 +1,39 @@
+This file contains the sql commands that were used to extract the observations from the MIMIC psql database.
+
+1) Labevents for first 24 hours of the first icustay for the patients who survived beyond 24 hours in the first icu stay (joining on hadm_id; important because there are some outpatients with no hadm_id)
+
+SELECT l.*, p.expire_flag, i.dbsource FROM labevents l
+INNER JOIN patients p ON p.subject_id = l.subject_id
+INNER JOIN (SELECT DISTINCT ON (hadm_id) * from icustays order by hadm_id, intime)  i
+ON l.hadm_id = i.hadm_id  
+WHERE
+(l.charttime between i.intime AND i.intime + interval '1' day)
+AND
+(p.subject_id
+NOT IN
+(select patients.subject_id  from patients, (SELECT DISTINCT ON (hadm_id) * from icustays order by hadm_id, intime) i WHERE patients.subject_id=i.subject_id  AND (patients.dod between i.intime and  i.intime + interval '1' day))
+);
+
+2) Chartevents for first 24 hours of the first icustay for the patients who survived beyond 24 hours in the first icu stay ( joining on icustay_id)
+
+SELECT ce.*, p.expire_flag, i.dbsource FROM patients p
+INNER JOIN chartevents ce ON p.subject_id = ce.subject_id
+INNER JOIN (SELECT DISTINCT ON (hadm_id) * from icustays order by hadm_id, intime)  i
+ON ce.hadm_id = i.hadm_id  
+WHERE
+(ce.charttime between i.intime AND i.intime + interval '1' day)
+AND
+(p.subject_id
+NOT IN
+(select patients.subject_id  from patients, (SELECT DISTINCT ON (hadm_id) * from icustays order by hadm_id, intime) i_up WHERE patients.subject_id=i_up.subject_id  AND (patients.dod between i_up.intime and  i_up.intime + interval '1' day))
+) ;
+
+3) Selecting last event for one admission for one patient of a fixed itemid
+
+select DISTINCT ON (l.subject_id, l.hadm_id, l.itemid) * from source_table l order by l.subject_id, l.hadm_id, l.itemid, charttime DESC;
+
+
+Final steps:
+
+1) Create temporary table using (1) and (2) above for labevents and chartevents.
+2) Use the above generated temporary tables as a source_table in command (3) above to create a table that has the last observation in first 24 hours of the first icustay per itemid per patient.
