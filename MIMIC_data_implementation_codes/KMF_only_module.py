@@ -521,8 +521,10 @@ if True:
     mapped_features = [5,2]
 
     Cor_btw_df = np.zeros((len(dataset1_tr.columns), len(dataset2_tr.columns)))
+    j=0 # counter since Cor_btw_df is a np array and not a pandas df
     for i in dataset2_tr.columns:
-        Cor_btw_df[:,i] = dataset1_tr.corrwith(dataset2_tr[i])
+        Cor_btw_df[:,j] = dataset1_tr.corrwith(dataset2_tr[i])
+        j=j+1
     Cor_df = pd.DataFrame(Cor_btw_df,
                      index=dataset1_tr.columns,
                      columns=dataset2_tr.columns)
