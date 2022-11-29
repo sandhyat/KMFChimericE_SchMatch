@@ -128,8 +128,9 @@ def Matching_via_HRM(C_X1_train, C_X2_train, P_x1_O_to_R,
     print(matching_x2_train)
 
     x1_train_y = np.array([int(str(v[0]).split("C")[1]) for v in matching_x1_train.values()])
+    # x1_train_y = [None if v is [] else int(str(v[0])[1:]) for v in matching_x1_train.values()]
     x2_train_y = np.array([int(str(v[0]).split("R")[1]) for v in matching_x2_train.values()])
-
+    # x2_train_y = [None if v is [] else int(str(v[0])[1:]) for v in matching_x2_train.values()]
     # matching matrices
     matching_x1_train_matrix = np.zeros(C_X1_train.shape)
     matching_x2_train_matrix = np.zeros(np.transpose(C_X2_train).shape)
@@ -140,11 +141,13 @@ def Matching_via_HRM(C_X1_train, C_X2_train, P_x1_O_to_R,
 
     for i in range(matching_x1_train_matrix.shape[0]):
         # print(i, x1_train_y[i]-1)
-        matching_x1_train_matrix[i, x1_train_y[i] - 1] = 1
+        if x1_train_y[i] is not None:
+            matching_x1_train_matrix[i, x1_train_y[i] - 1] = 1
 
     for i in range(matching_x2_train_matrix.shape[0]):
         # print(i, x2_train_y[i]-1)
-        matching_x2_train_matrix[i, x2_train_y[i] - 1] = 1
+        if x2_train_y[i] is not None:
+            matching_x2_train_matrix[i, x2_train_y[i] - 1] = 1
 
     # getting the number of correct matches that had a match in other database
     num_correct_from_x1 = 0
@@ -162,6 +165,7 @@ def Simple_maximum_sim_viaCorrelation(df_train_preproc, df_rename_preproc, P_x1
                                       , reordered_column_names_orig, reordered_column_names_r,
                                       mapped_features, Cor_from_df, Df_holdout_orig, DF_holdout_r):
     """
+    Make sure that the dataset one has smaller number of columns, i.e., len(reordered_column_names_orig) <= len(reordered_column_names_r)
     :param df_train_preproc:  dataset 1 training set
     :param df_rename_preproc: dataset 2 trainng set
     :param P_x1:  true permutation matrix between only unmatched features
@@ -173,7 +177,8 @@ def Simple_maximum_sim_viaCorrelation(df_train_preproc, df_rename_preproc, P_x1
     :param DF_holdout_r: dataset 2 holdout set for bootstrapping
     :return:
     """
-
+    if (df_train_preproc.shape[1] > df_rename_preproc.shape[1]):
+        raise Exception("Call this function when the first dataset has smaller/equal number of columns")
 
     mpfeatures = len(mapped_features)
     unmapped_features_orig = [ i for i in reordered_column_names_orig if i not in mapped_features]
@@ -237,24 +242,12 @@ def Simple_maximum_sim_viaCorrelation(df_train_preproc, df_rename_preproc, P_x1
 
     # Bootstrap samples to obtain the standard deviation methods to be later used in p value computation
     num_of_bts = 10
-    bts_for_allthe_accepted_matches_fromX1 = np.zeros((len(unmapped_features_orig), num_of_bts))
-    bts_for_allthe_accepted_matches_fromX2 = np.zeros((len(unmapped_features_orig), num_of_bts))
+    bts_for_allthe_accepted_matches_fromX1 = np.zeros((df_train_preproc.shape[1] - mpfeatures, num_of_bts))
+    bts_for_allthe_accepted_matches_fromX2 = np.zeros((df_train_preproc.shape[1] - mpfeatures, num_of_bts))
 
     for bts in range(num_of_bts):
-        Df_holdout_orig_bts = Df_holdout_orig.sample(n=len(Df_holdout_orig), replace=True, random_state=bts, axis=0)
-        DF_holdout_r_bts = DF_holdout_r.sample(n=len(DF_holdout_r), replace=True, random_state=bts, axis=0)
-        # CorMatrix_X1_unmap_mapped_bts = np.zeros((unmapped_features_orig, mpfeatures))
-        # CorMatrix_X2_unmap_mapped_bts = np.zeros((unmapped_features_r, mpfeatures))
-        #
-        # for i in range(unmapped_features_orig):
-        #     for j in range(mpfeatures):
-        #         temp = stats.pearsonr(Df_holdout_orig_bts.values[:, mpfeatures + i], Df_holdout_orig_bts.values[:, j])
-        #         CorMatrix_X1_unmap_mapped_bts[i, j] = temp[0]
-        #
-        # for i in range(unmapped_features_r):
-        #     for j in range(mpfeatures):
-        #         temp = stats.pearsonr(DF_holdout_r_bts.values[:, mpfeatures + i], DF_holdout_r_bts.values[:, j])
-        #         CorMatrix_X2_unmap_mapped_bts[i, j] = temp[0]
+        Df_holdout_orig_bts = Df_holdout_orig.sample(n=Df_holdout_orig.shape[0], replace=True, random_state=bts, axis=0)
+        DF_holdout_r_bts = DF_holdout_r.sample(n=DF_holdout_r.shape[0], replace=True, random_state=bts, axis=0)
 
         CorMatrix_X1_unmap_mapped_bts = Df_holdout_orig_bts.corr().loc[unmapped_features_orig, mapped_features]
         CorMatrix_X2_unmap_mapped_bts = DF_holdout_r_bts.corr().loc[unmapped_features_r, mapped_features]
@@ -318,9 +311,9 @@ def Simple_maximum_sim_viaCorrelation(df_train_preproc, df_rename_preproc, P_x1
 
     for i in range(len(temp_inf_x1.SD_rejects_H0)):
         matched_index = [j for j in range(x1_match_matrix_test.shape[1]) if x1_match_matrix_test[i, j] == 1]
-        temp_inf_x1.loc[i, "ump_feature_in_X1"] = reordered_column_names_orig[len(mapped_features) + i]
+        temp_inf_x1.loc[i, "ump_feature_in_X1"] = reordered_column_names_orig[mpfeatures + i]
         # temp_inf_x1.loc[i, "CV_label"] = itemid_label_dict[int(reordered_column_names_orig[len(mapped_features) + i])]
-        temp_inf_x1.loc[i, "match_byGS"] = reordered_column_names_r[len(mapped_features) + matched_index[0]]
+        temp_inf_x1.loc[i, "match_byGS"] = reordered_column_names_r[mpfeatures + matched_index[0]]
         # temp_inf_x1.loc[i, "match_byGS(MV_label)"] = itemid_label_dict[
         #     int(reordered_column_names_r[len(mapped_features) + matched_index[0]])]
         temp_inf_x1.loc[i, "true_correlation"] = Cor_from_df.loc[
