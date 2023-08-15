@@ -486,7 +486,7 @@ if True:
     num_features = 7
     num_samples = 5000
     num_factors = 3
-    num_xtra_feat_inX1 = 0
+    num_xtra_feat_inX1 = 1
 
 
     mean_pos = np.random.randint(10, 20, num_features)
@@ -498,6 +498,7 @@ if True:
     dataset1_neg_train = np.random.multivariate_normal(mean_neg, cov,num_samples)
 
     dataset1 = pd.DataFrame(np.concatenate([dataset1_pos_train, dataset1_neg_train]), columns=[5,2, 0,1,3,4,6])
+    dataset1 = dataset1.drop(columns=[4])
 
     dataset2_pos_train = np.random.multivariate_normal(mean_pos, cov, num_samples)
     dataset2_neg_train = np.random.multivariate_normal(mean_neg, cov, num_samples)
@@ -505,6 +506,7 @@ if True:
     dataset2 = pd.DataFrame(np.concatenate([dataset2_pos_train, dataset2_neg_train]), columns=[5,2, 0,1,3,4,6])
 
     dataset2 = dataset2[[5,2, 6,0,1,3,4]]
+
 
 
     dataset1_tr, dataset1_holdout = model_selection.train_test_split(dataset1, test_size=0.2, random_state=42)

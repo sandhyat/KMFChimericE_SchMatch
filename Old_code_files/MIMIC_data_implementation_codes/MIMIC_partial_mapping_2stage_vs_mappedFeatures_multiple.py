@@ -1676,7 +1676,8 @@ def main(dataset_no_sample):
 
 
                 # calling the KMF function
-                correct_with_match_from_x1_test_sim_cor, correct_with_match_from_x2_test_sim_cor, correct_with_no_match_from_CCx1_test_sim_cor, correct_with_no_match_from_CCx2_test_sim_cor, temp_infer_from_x1_sim_cor, temp_infer_from_x2_sim_cor, mapp_fea_to_add, mapp_fea_to_add_match, F1_fromx1_simcor, F1_fromx2_simcor = Simple_maximum_sim_viaCorrelation(
+                correct_with_match_from_x1_test_sim_cor, correct_with_match_from_x2_test_sim_cor, correct_with_no_match_from_CCx1_test_sim_cor, correct_with_no_match_from_CCx2_test_sim_cor, \
+                temp_infer_from_x1_sim_cor, temp_infer_from_x2_sim_cor, mapp_fea_to_add, mapp_fea_to_add_match, F1_fromx1_simcor, F1_fromx2_simcor = Simple_maximum_sim_viaCorrelation(
                                     df_train_preproc.copy(), df_rename_preproc.copy(), P_x1[len(mapped_features):,
                                                                                        len(mapped_features):],
                                     reorder_column_CV, reorder_column_MV, mapped_features, Cor_df, DF_holdout_orig,

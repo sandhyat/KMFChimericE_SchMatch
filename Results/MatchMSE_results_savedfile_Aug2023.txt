@@ -1,0 +1,480 @@
+Dataset no  Nomao  with  vs_mapped L dimension 5 
+
+
+ Average MatchMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  0.5923573878888889
+ KMF  1.6729409473333336
+ Kang 0.9553328043333335
+ RadialGAN 1.6136029729999999
+ CL 0.7132084569999999
+ CL_Dec 1.0288818101111112
+ CL_Dec_KMFl 0.27683297677777774
+ CL_Dec_KMFen 0.2677058361111111
+ 
+ ********* P value ************ 
+ 
+
+  2stage - Kang, two sided p value  0.0
+ 2 stage - KMF, two sided p value   0.0
+ 2 stage - CL, two sided p value   0.001
+ 2 stage - CLDec, two sided p value   0.0
+ 2 stage - CLDecKMFl, two sided p value   0.0
+ 2 stage - CLDecKMFen, two sided p value   0.0
+ KMF - Kang, two sided p value  0.0
+ KMF - CL, two sided p value  0.0
+ KMF - CLDec, two sided p value  0.0
+ KMF - CLDecKMFl, two sided p value  0.0
+ KMF - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFl, two sided p value  0.0
+ CL - CLDec, two sided p value  0.0
+ CLDecKMFl - CLDecKMFen, two sided p value  0.74
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Dataset no  superconductor  with  vs_mapped L dimension 5 
+
+
+ Average MatchMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  0.570275734
+ KMF  1.840675102777778
+ Kang 1.2952116012222223
+ RadialGAN 1.775383359555556
+ CL 0.22088200577777775
+ CL_Dec 0.35783875966666673
+ CL_Dec_KMFl 0.12843577188888888
+ CL_Dec_KMFen 0.05049299399999999
+ 
+ ********* P value ************ 
+ 
+
+  2stage - Kang, two sided p value  0.0
+ 2 stage - KMF, two sided p value   0.0
+ 2 stage - CL, two sided p value   0.0
+ 2 stage - CLDec, two sided p value   0.0
+ 2 stage - CLDecKMFl, two sided p value   0.0
+ 2 stage - CLDecKMFen, two sided p value   0.0
+ KMF - Kang, two sided p value  0.0
+ KMF - CL, two sided p value  0.0
+ KMF - CLDec, two sided p value  0.0
+ KMF - CLDecKMFl, two sided p value  0.0
+ KMF - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFl, two sided p value  0.0
+ CL - CLDec, two sided p value  0.0
+ CLDecKMFl - CLDecKMFen, two sided p value  0.0
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dataset no  Syn_5  with  vs_mapped L dimension 5 
+
+
+ Average MatchMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  0.026378741999999997
+ KMF  1.9224354836666666
+ Kang 0.678464442111111
+ RadialGAN 1.8953671186666672
+ CL 0.3648550862222223
+ CL_Dec 0.07701046855555556
+ CL_Dec_KMFl 0.021641933333333335
+ CL_Dec_KMFen 0.040766443
+
+ 
+ ********* P value ************ 
+ 
+
+  2stage - Kang, two sided p value  0.0
+ 2 stage - KMF, two sided p value   0.0
+ 2 stage - CL, two sided p value   0.0
+ 2 stage - CLDec, two sided p value   0.005
+ 2 stage - CLDecKMFl, two sided p value   0.434
+ 2 stage - CLDecKMFen, two sided p value   0.106
+ KMF - Kang, two sided p value  0.0
+ KMF - CL, two sided p value  0.0
+ KMF - CLDec, two sided p value  0.0
+ KMF - CLDecKMFl, two sided p value  0.0
+ KMF - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFl, two sided p value  0.0
+ CL - CLDec, two sided p value  0.0
+ CLDecKMFl - CLDecKMFen, two sided p value  0.001
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dataset no  Syn_5  with  varying_sample L dimension 5 
+
+
+ Average MatchMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  0.598481062
+ KMF  1.9518793630666664
+ Kang 1.450015745333333
+ RadialGAN 1.9533433941333331
+ CL 0.6148096537333333
+ CL_Dec 0.22022055826666667
+ CL_Dec_KMFl 0.3775049677333333
+ CL_Dec_KMFen 0.5564891413333334
+ 
+ ********* P value ************ 
+ 
+
+  2stage - Kang, two sided p value  0.0
+ 2 stage - KMF, two sided p value   0.0
+ 2 stage - CL, two sided p value   0.326
+ 2 stage - CLDec, two sided p value   0.0
+ 2 stage - CLDecKMFl, two sided p value   0.0
+ 2 stage - CLDecKMFen, two sided p value   0.43
+ KMF - Kang, two sided p value  0.0
+ KMF - CL, two sided p value  0.0
+ KMF - CLDec, two sided p value  0.0
+ KMF - CLDecKMFl, two sided p value  0.0
+ KMF - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFen, two sided p value  0.143
+ CL - CLDecKMFl, two sided p value  0.0
+ CL - CLDec, two sided p value  0.0
+ CLDecKMFl - CLDecKMFen, two sided p value  0.0
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dataset no  Syn_1  with  binarized L dimension 5 
+
+
+ Average MatchMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  0.10034302844444443
+ KMF  0.46466834766666665
+ Kang 0.010985185222222221
+ RadialGAN 0.46287256388888887
+ CL 0.17028783611111112
+ CL_Dec 0.2468080468888889
+ CL_Dec_KMFl 0.10989840955555555
+ CL_Dec_KMFen 0.15188374
+ 
+ ********* P value ************ 
+ 
+
+  2stage - Kang, two sided p value  0.0
+ 2 stage - KMF, two sided p value   0.0
+ 2 stage - CL, two sided p value   0.0
+ 2 stage - CLDec, two sided p value   0.0
+ 2 stage - CLDecKMFl, two sided p value   0.245
+ 2 stage - CLDecKMFen, two sided p value   0.0
+ KMF - Kang, two sided p value  0.0
+ KMF - CL, two sided p value  0.0
+ KMF - CLDec, two sided p value  0.0
+ KMF - CLDecKMFl, two sided p value  0.0
+ KMF - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFen, two sided p value  0.154
+ CL - CLDecKMFl, two sided p value  0.0
+ CL - CLDec, two sided p value  0.0
+ CLDecKMFl - CLDecKMFen, two sided p value  0.0
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dataset no  Syn_1  with  sq4 L dimension 5 
+
+
+ Average MatchMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  0.22743821322222224
+ KMF  1.8510033796666667
+ Kang 0.0749610151111111
+ RadialGAN 1.8450585667777777
+ CL 0.7428476891111109
+ CL_Dec 0.8638340710000001
+ CL_Dec_KMFl 0.3316158587777777
+ CL_Dec_KMFen 0.17117467633333333
+ 
+ ********* P value ************ 
+ 
+
+  2stage - Kang, two sided p value  0.002
+ 2 stage - KMF, two sided p value   0.0
+ 2 stage - CL, two sided p value   0.0
+ 2 stage - CLDec, two sided p value   0.0
+ 2 stage - CLDecKMFl, two sided p value   0.003
+ 2 stage - CLDecKMFen, two sided p value   0.035
+ KMF - Kang, two sided p value  0.0
+ KMF - CL, two sided p value  0.0
+ KMF - CLDec, two sided p value  0.0
+ KMF - CLDecKMFl, two sided p value  0.0
+ KMF - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFl, two sided p value  0.0
+ CL - CLDec, two sided p value  0.003
+ CLDecKMFl - CLDecKMFen, two sided p value  0.0
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Dataset no  Nomao  with  PM L dimension 15 
+
+
+ Average MatchMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  0.6702224071999999
+ KMF  1.6055436381333332
+ Kang 0.059223976133333335
+ RadialGAN nan
+ CL 0.7820343326666666
+ CL_Dec 1.0030833306666664
+ CL_Dec_KMFl 0.4737934125333333
+ CL_Dec_KMFen 0.3473039094666666
+ 
+ ********* P value ************ 
+ 
+
+  2stage - Kang, two sided p value  0.0
+ 2 stage - KMF, two sided p value   0.0
+ 2 stage - CL, two sided p value   0.037
+ 2 stage - CLDec, two sided p value   0.0
+ 2 stage - CLDecKMFl, two sided p value   0.0
+ 2 stage - CLDecKMFen, two sided p value   0.0
+ KMF - Kang, two sided p value  0.0
+ KMF - CL, two sided p value  0.0
+ KMF - CLDec, two sided p value  0.0
+ KMF - CLDecKMFl, two sided p value  0.0
+ KMF - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFl, two sided p value  0.0
+ CL - CLDec, two sided p value  0.0
+ CLDecKMFl - CLDecKMFen, two sided p value  0.0
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Dataset no  superconductor  with  PM L dimension 15 
+
+
+ Average MatchMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  0.26298119933333336
+ KMF  1.7826184204000004
+ Kang 0.12455821426666666
+ RadialGAN nan
+ CL 0.11926900066666667
+ CL_Dec 0.11334415306666666
+ CL_Dec_KMFl 0.018895126800000005
+ CL_Dec_KMFen 0.031944263333333334
+ 
+ ********* P value ************ 
+ 
+
+  2stage - Kang, two sided p value  0.0
+ 2 stage - KMF, two sided p value   0.0
+ 2 stage - CL, two sided p value   0.0
+ 2 stage - CLDec, two sided p value   0.0
+ 2 stage - CLDecKMFl, two sided p value   0.0
+ 2 stage - CLDecKMFen, two sided p value   0.0
+ KMF - Kang, two sided p value  0.0
+ KMF - CL, two sided p value  0.0
+ KMF - CLDec, two sided p value  0.0
+ KMF - CLDecKMFl, two sided p value  0.0
+ KMF - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFl, two sided p value  0.0
+ CL - CLDec, two sided p value  0.866
+ CLDecKMFl - CLDecKMFen, two sided p value  0.0
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Dataset no  Syn_5  with  onto L dimension 15 
+
+
+ Average MatchMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  0.0448532844
+ KMF  1.9125383262666669
+ Kang 0.24799624733333336
+ RadialGAN nan
+ CL 0.016393565066666664
+ CL_Dec 0.06920309999999999
+ CL_Dec_KMFl 0.002810552133333333
+ CL_Dec_KMFen 0.010628738533333333
+
+ ********* P value ************ 
+
+  2stage - Kang, two sided p value  0.0
+ 2 stage - KMF, two sided p value   0.0
+ 2 stage - CL, two sided p value   0.01
+ 2 stage - CLDec, two sided p value   0.458
+ 2 stage - CLDecKMFl, two sided p value   0.0
+ 2 stage - CLDecKMFen, two sided p value   0.007
+ KMF - Kang, two sided p value  0.0
+ KMF - CL, two sided p value  0.0
+ KMF - CLDec, two sided p value  0.0
+ KMF - CLDecKMFl, two sided p value  0.0
+ KMF - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFen, two sided p value  0.638
+ CL - CLDecKMFl, two sided p value  0.028
+ CL - CLDec, two sided p value  0.009
+ CLDecKMFl - CLDecKMFen, two sided p value  0.115
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dataset no  ACTFAST_data  with  onto L dimension 20 
+
+
+ Average MatchMSE score across all possible partitions 
+ 
+ 2stage ChimericE  1.4478944418333335
+ KMF  1.15830644
+ Kang 1.9177290744999997
+ CL 1.6615783595000004
+ CL_Dec 1.3335222918333334
+ CL_Dec_KMFl 0.9671993963333335
+ CL_Dec_KMFen 1.1230909476666668
+ 
+ ********* P value ************ 
+ 
+
+  2stage - Kang, two sided p value  0.0
+ 2 stage - KMF, two sided p value   0.0
+ 2 stage - CL, two sided p value   0.0
+ 2 stage - CLDec, two sided p value   0.004
+ 2 stage - CLDecKMFl, two sided p value   0.0
+ 2 stage - CLDecKMFen, two sided p value   0.0
+ KMF - Kang, two sided p value  0.0
+ KMF - CL, two sided p value  0.0
+ KMF - CLDec, two sided p value  0.0
+ KMF - CLDecKMFl, two sided p value  0.0
+ KMF - CLDecKMFen, two sided p value  0.286
+ CL - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFl, two sided p value  0.0
+ CL - CLDec, two sided p value  0.0
+ CLDecKMFl - CLDecKMFen, two sided p value  0.0
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dataset no  MIMIC_data  with  Emb_PM L dimension 20 
+
+
+ Average MatchMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  1.3623545893333333
+ KMF  1.2432947200000002
+ Kang 1.7055080886666667
+ RadialGAN nan
+ CL 0.7408177866666666
+ CL_Dec 0.8381313206666666
+ CL_Dec_KMFl 1.0769337193333333
+ CL_Dec_KMFen 0.8983819593333334
+ 
+ ********* P value ************ 
+ 
+
+  2stage - Kang, two sided p value  0.0
+ 2 stage - KMF, two sided p value   0.0
+ 2 stage - CL, two sided p value   0.0
+ 2 stage - CLDec, two sided p value   0.0
+ 2 stage - CLDecKMFl, two sided p value   0.0
+ 2 stage - CLDecKMFen, two sided p value   0.0
+ KMF - Kang, two sided p value  0.0
+ KMF - CL, two sided p value  0.0
+ KMF - CLDec, two sided p value  0.0
+ KMF - CLDecKMFl, two sided p value  0.0
+ KMF - CLDecKMFen, two sided p value  0.0
+ CL - CLDecKMFen, two sided p value  0.002
+ CL - CLDecKMFl, two sided p value  0.0
+ CL - CLDec, two sided p value  0.151
+ CLDecKMFl - CLDecKMFen, two sided p value  0.0
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+RECONMSE STUFF
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dataset no  Nomao  with  vs_mapped L dimension 5 
+
+
+ Average ReconMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  1.1000994227777778
+ CL_Dec 1.0105436352222223
+
+ ********* P value ************ 
+
+ 2 stage - CLDec, two sided p value   0.001
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Dataset no  superconductor  with  vs_mapped L dimension 5 
+
+
+ Average ReconMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  1.338201441888889
+ CL_Dec 0.5209539112222222
+
+ ********* P value ************ 
+
+ 2 stage - CLDec, two sided p value   0.0
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Dataset no  Nomao  with  PM L dimension 15 
+
+
+ Average ReconMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  1.0610360225333335
+ CL_Dec 1.0963774622666667
+
+ ********* P value ************ 
+ 
+ 2 stage - CLDec, two sided p value   0.107
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Dataset no  superconductor  with  PM L dimension 15 
+
+
+ Average ReconMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  1.2773017752
+ CL_Dec 0.5957424538666667
+
+ ********* P value ************ 
+
+ 2 stage - CLDec, two sided p value   0.0
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dataset no  ACTFAST_data  with  onto L dimension 20 
+
+
+ Average ReconMSE score across all possible partitions 
+ 
+ 2stage ChimericE  1.2754557968333333
+ CL_Dec 1.2406554668333336
+
+********* P value ************ 
+ 
+ 2 stage - CLDec, two sided p value   0.009
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dataset no  MIMIC_data  with  Emb_PM L dimension 20 
+
+
+ Average ReconMSE score across all possible partitions 
+ 
+ 2stage_ChimericE  1.470647486
+ CL_Dec 0.977569394
+
+ 2 stage - CLDec, two sided p value   0.0
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+

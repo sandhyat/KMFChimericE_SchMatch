@@ -1,0 +1,48 @@
+
+ 
+ List of mapped features 
+ [5, 10, 15, 20, 25, 30]
+ 
+ Recon  MSE for across trials and perm 
+ X1_train 
+[[1.07815623        nan        nan 1.09781706        nan 1.13670015
+         nan        nan 1.06464565        nan 1.16164708 1.16255546
+  0.70705634 1.10780692 0.91552514]
+ [       nan        nan        nan        nan 0.93735683 1.11569738
+  1.0176791  1.07128739 1.17517221 1.11558104        nan        nan
+         nan        nan        nan]
+ [       nan        nan        nan        nan        nan 1.48832965
+  1.58958232        nan 1.37202132        nan        nan        nan
+         nan        nan        nan]
+ [       nan 0.98008555        nan        nan        nan        nan
+         nan        nan        nan        nan        nan        nan
+         nan        nan        nan]
+ [       nan        nan        nan        nan        nan        nan
+         nan        nan        nan        nan        nan        nan
+         nan        nan        nan]
+ [       nan        nan        nan        nan        nan        nan
+         nan        nan        nan        nan        nan        nan
+         nan        nan        nan]]
+ X1_train_CL_Dec 
+[[0.89543092 0.83187187 0.79744416 0.67129737 0.83607316 0.6669125
+  0.87513322 0.87176305 0.93884379 0.85094094 0.87309623 0.85190344
+         nan 0.86819291 0.85557967]
+ [0.56590426 0.80255729 0.83533955        nan        nan 0.80526483
+  0.69899529 0.90815836        nan 0.91463518 0.79296428 0.85594118
+  0.76848197        nan        nan]
+ [       nan        nan        nan 0.55730546        nan        nan
+         nan        nan 0.73512089        nan        nan 0.73629677
+         nan        nan        nan]
+ [       nan        nan        nan        nan        nan        nan
+         nan        nan        nan 0.58608955        nan        nan
+         nan        nan        nan]
+ [       nan        nan        nan        nan        nan        nan
+         nan        nan        nan        nan        nan        nan
+         nan        nan        nan]
+ [       nan        nan        nan        nan        nan        nan
+         nan        nan        nan        nan        nan        nan
+         nan        nan        nan]]
+ X2_train_CL_Dec 
+
+ 
+ 
