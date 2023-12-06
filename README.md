@@ -35,6 +35,10 @@ Following are the file names and how to use them:
 
 5) HP_running_file_MIMIC_CL.py : This file generates the Sobol sequence based HP grid for CL based methods and are saved in the 'bsub_command_CL_DatasetMIMIC-with*.txt'.
 
+6) MIMIC_summary_Statistic_methods.py : This file implements the two univariate parametric (Sum-Stat) and non-parametric (KS-Stat) statistic based methods on MIMIC-III's Carevue and Metavision charts. These methods do not use known mapped features (labs).
+
+7) SMAT/train.py : This is a metadata based implementation adapted from the [SMAT](https://link.springer.com/chapter/10.1007/978-3-030-82472-3_19) paper's  [code](https://github.com/JZCS2018/SMAT/tree/main). The authors had used MIMIC but the setup was little different. For the sake of completeness, we add the MIMIC chartname dataset that we used too in SMAT/datasets subdirectory. To use SMAt in our setup, the dataset name is 'mimic_updated'. Glove embeddings needed for implementation can be downloaded from [here](https://huggingface.co/stanfordnlp/glove/resolve/main/glove.840B.300d.zip).
+
 ### ACTFAST data implementation
 
 1) Different_view_creation_ActFast.py : This file is used to preprocess and create the mapped and unmapped set of features, i.e., preops and labs for the ACTFAST data experiment where the task is to map the labs from Metavision and Epic era EHRs. This also saves any metadata and partitions the data into train and set at the start only.
@@ -42,6 +46,8 @@ Following are the file names and how to use them:
 2) ActFast_Preops_vs_Labs_comp_partial.py : Evaluates the performance of all the proposed methods on the ACTFAST dataset in comparison to Kang method. Here the preoperative faetures are treated as mapped set and the labs are treated as the unmapped set. Clearly, there were non-overlapping features but after the expert provided gold standard maps, Epic labs were a subset of the MV labs and hence this was a onto setup. The best set of hyperparameters are chosen by running 'ActFast_preops_vs_Labs_HP_tuning.py' on the settings in 'bsub_command_CL_DatasetACTFAST_preops_vs_Labs.txt'.
 
 3) HP_running_file_ActFAST_CL.py : This file generates the Sobol sequence based HP grid for CL based methods and are saved in the  bsub file.
+
+4) ACTFAST_univariate_statistic_methods.py : This file implements the two univariate parametric (Sum-Stat) and non-parametric (KS-Stat) statistic based methods on ACTFAST dataset's Metavision and Epic era labs. These methods do not use known mapped features (preops).
 
 ### Results
 
